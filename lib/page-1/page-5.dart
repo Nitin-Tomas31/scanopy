@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/camera/camerautils.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/camera/startcamera.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -25,7 +29,7 @@ class HomePage extends StatelessWidget {
             Container(
               // autogroupmz8zd2v (BmLLptrG3FzBCwZcW5MZ8z)
               margin:
-                  EdgeInsets.fromLTRB(0 * fem, 50 * fem, 259 * fem, 295 * fem),
+              EdgeInsets.fromLTRB(0 * fem, 50 * fem, 259 * fem, 295 * fem),
               width: 82 * fem,
               height: 25 * fem,
               child: Stack(
@@ -89,7 +93,7 @@ class HomePage extends StatelessWidget {
             Container(
               // signalGVC (26:70)
               margin:
-                  EdgeInsets.fromLTRB(143 * fem, 0 * fem, 173 * fem, 0 * fem),
+              EdgeInsets.fromLTRB(143 * fem, 0 * fem, 173 * fem, 0 * fem),
               width: double.infinity,
               height: 25 * fem,
             ),
@@ -194,6 +198,13 @@ class HomePage extends StatelessWidget {
                     // vectort2i (26:90)
                     left: 155 * fem,
                     top: 15 * fem,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CameraPreviewWidget()),
+                        );
+                      },
                     child: Align(
                       child: SizedBox(
                         width: 41 * fem,
@@ -203,6 +214,7 @@ class HomePage extends StatelessWidget {
                           width: 41 * fem,
                           height: 35.88 * fem,
                         ),
+                      ),
                       ),
                     ),
                   ),

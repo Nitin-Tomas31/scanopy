@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/page-5.dart';
 import 'package:myapp/utils.dart';
 
 class FinalPage extends StatelessWidget {
@@ -90,7 +91,16 @@ class FinalPage extends StatelessWidget {
                 color: Color(0xff66cfde),
               ),
               child: Center(
-                child: Text(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  style:
+                  TextButton.styleFrom(fixedSize: const Size(400, 100)),
+                  child: Text(
                   'NEXT',
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
@@ -101,6 +111,8 @@ class FinalPage extends StatelessWidget {
                     color: const Color(0xffffffff),
                   ),
                 ),
+                ),
+
               ),
             ),
           ],

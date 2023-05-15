@@ -4,19 +4,21 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // page5GXp (26:69)
         padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -29,64 +31,6 @@ class Scene extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    // group2JDc (26:71)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 23.02*fem),
-                    padding: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0.98*fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // pmCpn (I26:71;1:13)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 223*fem, 0*fem),
-                          child: Text(
-                            '9:40pm',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 14*ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.2125*ffem/fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // group16fG (I26:71;16:2)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0.18*fem, 5.31*fem, 0*fem),
-                          width: 14.42*fem,
-                          height: 15.18*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/group-1.png',
-                            width: 14.42*fem,
-                            height: 15.18*fem,
-                          ),
-                        ),
-                        Container(
-                          // wific7p (I26:71;1:7)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5.31*fem, 0.02*fem),
-                          width: 18.98*fem,
-                          height: 13.28*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/wifi-YHt.png',
-                            width: 18.98*fem,
-                            height: 13.28*fem,
-                          ),
-                        ),
-                        Container(
-                          // batterythreequarters7qG (I26:71;1:9)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0.02*fem),
-                          width: 18.98*fem,
-                          height: 9.49*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/battery-three-quarters-n4n.png',
-                            width: 18.98*fem,
-                            height: 9.49*fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Container(
                     // autogroupmz8zd2v (BmLLptrG3FzBCwZcW5MZ8z)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 259*fem, 295*fem),
@@ -109,7 +53,7 @@ class Scene extends StatelessWidget {
                                   fontSize: 20*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2125*ffem/fem,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
@@ -172,7 +116,7 @@ class Scene extends StatelessWidget {
                         width: 360*fem,
                         height: 73*fem,
                         child: Container(
-                          decoration: BoxDecoration (
+                          decoration: const BoxDecoration (
                             color: Color(0x7c66cfde),
                           ),
                         ),
@@ -194,7 +138,7 @@ class Scene extends StatelessWidget {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2125*ffem/fem,
-                            color: Color(0x99000000),
+                            color: const Color(0x99000000),
                           ),
                         ),
                       ),
@@ -232,7 +176,7 @@ class Scene extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration (
                             borderRadius: BorderRadius.circular(35*fem),
-                            color: Color(0xff19d2ec),
+                            color: const Color(0xff19d2ec),
                           ),
                         ),
                       ),

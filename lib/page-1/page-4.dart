@@ -95,7 +95,7 @@ class FinalPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Home()),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
                   style:

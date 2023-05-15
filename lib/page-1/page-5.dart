@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -30,64 +30,6 @@ class Scene extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    // group2JDc (26:71)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 23.02*fem),
-                    padding: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0.98*fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // pmCpn (I26:71;1:13)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 223*fem, 0*fem),
-                          child: Text(
-                            '9:40pm',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 14*ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.2125*ffem/fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // group16fG (I26:71;16:2)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0.18*fem, 5.31*fem, 0*fem),
-                          width: 14.42*fem,
-                          height: 15.18*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/group-1.png',
-                            width: 14.42*fem,
-                            height: 15.18*fem,
-                          ),
-                        ),
-                        Container(
-                          // wific7p (I26:71;1:7)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5.31*fem, 0.02*fem),
-                          width: 18.98*fem,
-                          height: 13.28*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/wifi-YHt.png',
-                            width: 18.98*fem,
-                            height: 13.28*fem,
-                          ),
-                        ),
-                        Container(
-                          // batterythreequarters7qG (I26:71;1:9)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0.02*fem),
-                          width: 18.98*fem,
-                          height: 9.49*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/battery-three-quarters-n4n.png',
-                            width: 18.98*fem,
-                            height: 9.49*fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
                     // autogroupmz8zd2v (BmLLptrG3FzBCwZcW5MZ8z)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 259*fem, 295*fem),
                     width: 82*fem,
@@ -97,7 +39,7 @@ class Scene extends StatelessWidget {
                         Positioned(
                           // home9X4 (26:81)
                           left: 25*fem,
-                          top: 0*fem,
+                          top: 20*fem,
                           child: Align(
                             child: SizedBox(
                               width: 57*fem,

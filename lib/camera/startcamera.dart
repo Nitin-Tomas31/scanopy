@@ -74,8 +74,17 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 16.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0x00000000), // Transparent color
+                      ),
+                    ),
                     onPressed: takePicture,
-                    child: Image.asset('assets/page-1/images/circle-png-25313.png',height: 90,width: 90,),
+                    child: Image.asset(
+                      'assets/page-1/images/circle-png-25313.png',
+                      height: 70,
+                      width: 70,
+                    ),
                   ),
                 ),
               ),

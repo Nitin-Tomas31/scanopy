@@ -5,9 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/camera/camerautils.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/camera/startcamera.dart';
+import 'package:myapp/camera/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../camera/image_picker.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+  final ImageModel imageModel = ImageModel();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class HomePage extends StatelessWidget {
             Container(
               // autogroupmz8zd2v (BmLLptrG3FzBCwZcW5MZ8z)
               margin:
-              EdgeInsets.fromLTRB(0 * fem, 50 * fem, 259 * fem, 295 * fem),
+                  EdgeInsets.fromLTRB(0 * fem, 50 * fem, 259 * fem, 295 * fem),
               width: 82 * fem,
               height: 25 * fem,
               child: Stack(
@@ -93,7 +98,7 @@ class HomePage extends StatelessWidget {
             Container(
               // signalGVC (26:70)
               margin:
-              EdgeInsets.fromLTRB(143 * fem, 0 * fem, 173 * fem, 0 * fem),
+                  EdgeInsets.fromLTRB(143 * fem, 0 * fem, 173 * fem, 0 * fem),
               width: double.infinity,
               height: 25 * fem,
             ),
@@ -184,37 +189,54 @@ class HomePage extends StatelessWidget {
                     top: 51 * fem,
                     child: Align(
                       child: SizedBox(
-                        width: 20 * fem,
-                        height: 22.76 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/vector-EWr.png',
                           width: 20 * fem,
                           height: 22.76 * fem,
-                        ),
-                      ),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              imageModel.setSelectedImage();
+                            },
+                            child: Align(
+                              child: SizedBox(
+                                width: 41 * fem,
+                                height: 35.88 * fem,
+                                child: Image.asset(
+                                  'assets/page-1/images/vector-EWr.png',
+                                  width: 41 * fem,
+                                  height: 35.88 * fem,
+                                ),
+                              ),
+                            ),
+                          )),
                     ),
                   ),
                   Positioned(
                     // vectort2i (26:90)
-                    left: 155 * fem,
+                    left: 142 * fem,
                     top: 15 * fem,
                     child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color.fromARGB(255, 3, 173, 224)),
+                          shape: MaterialStateProperty.all<OutlinedBorder>(
+                              CircleBorder())),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const CameraPreviewWidget()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const CameraPreviewWidget()),
                         );
                       },
-                    child: Align(
-                      child: SizedBox(
-                        width: 41 * fem,
-                        height: 35.88 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/vector-82i.png',
+                      child: Align(
+                        child: SizedBox(
                           width: 41 * fem,
                           height: 35.88 * fem,
+                          child: Image.asset(
+                            'assets/page-1/images/vector-82i.png',
+                            width: 41 * fem,
+                            height: 35.88 * fem,
+                          ),
                         ),
-                      ),
                       ),
                     ),
                   ),

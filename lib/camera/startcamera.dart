@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
@@ -11,6 +13,7 @@ class CameraPreviewWidget extends StatefulWidget {
 class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+  File? _pictureFile; // Updated: Added '?' for null safety
 
   @override
   void initState() {
@@ -43,7 +46,9 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
   void takePicture() async {
     try {
       final picture = await _controller.takePicture();
-      // Do something with the picture, e.g. display it on a new screen.
+      setState(() {
+        _pictureFile = File(picture.path);
+      });
     } on CameraException catch (e) {
       print('Error: $e.code\nError Message: $e.message');
     }
@@ -72,7 +77,7 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
+                  padding: const EdgeInsets.only(bottom: 50.0),
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -82,12 +87,22 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
                     onPressed: takePicture,
                     child: Image.asset(
                       'assets/page-1/images/circle-png-25313.png',
-                      height: 70,
-                      width: 70,
+                      height: 90,
+                      width: 90,
                     ),
                   ),
                 ),
               ),
+              if (_pictureFile != null)
+                Positioned.fill(
+                  child: Container(
+                    color: Colors.black.withOpacity(0.5),
+                    child: Image.file(
+                      _pictureFile!,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
             ],
           );
         } else {

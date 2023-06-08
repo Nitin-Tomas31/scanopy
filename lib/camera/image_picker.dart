@@ -1,30 +1,39 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/camera/preview.dart';
+import 'dart:async';
+import 'package:myapp/camera/displayscreen.dart';
 
-class ImagePickerPage extends StatefulWidget {
-  const ImagePickerPage({Key? key}) : super(key: key);
+class ImagePickerScreen extends StatefulWidget {
+  const ImagePickerScreen({Key? key}) : super(key: key);
 
   @override
-  _ImagePickerPageState createState() => _ImagePickerPageState();
+  _ImagePickerScreenState createState() => _ImagePickerScreenState();
 }
 
-class _ImagePickerPageState extends State<ImagePickerPage> {
-  File? _imageFile;
+class _ImagePickerScreenState extends State<ImagePickerScreen> {
+  ImagePicker picker = ImagePicker();
+  late File _imageFile = File('assets/page-1/images/imgicon.png');
+  bool _imageSelected = false;
 
-  Future<void> _pickImage(ImageSource source) async {
-    final pickedImage = await ImagePicker().pickImage(source: source);
+  Future<void> _pickImageFromGallery() async {
+    final pickedImage = await picker.getImage(source: ImageSource.gallery);
+
     if (pickedImage != null) {
       setState(() {
         _imageFile = File(pickedImage.path);
+        _imageSelected = true;
       });
-      Navigator.push(
-        context,
+
+      Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => PicturePreviewPage(picturePath: pickedImage.path),
+          builder: (_) => DisplayPictureScreen(imagePath: _imageFile.path),
         ),
       );
+    } else {
+      setState(() {
+        _imageSelected = false;
+      });
     }
   }
 
@@ -32,22 +41,33 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 68, 6, 238),
         title: const Text('Image Picker'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (_imageFile != null)
-              Expanded(
-                child: Image.file(
-                  _imageFile!,
-                  fit: BoxFit.cover,
+          children: <Widget>[
+            if (_imageSelected)
+              Image.file(
+                _imageFile,
+                width: 200,
+                height: 200,
+              )
+            else
+              const Text(
+                'No image selected',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ElevatedButton(
-              onPressed: () => _pickImage(ImageSource.gallery),
-              child: const Text('Pick Image'),
+              onPressed: _pickImageFromGallery,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 68, 6, 238),
+              ),
+              child: const Text('Pick Image from Gallery'),
             ),
           ],
         ),

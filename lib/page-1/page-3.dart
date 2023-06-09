@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/page-4.dart';
 import 'package:myapp/utils.dart';
 
@@ -19,7 +16,7 @@ class _NextPage extends State<NextPage> {
     double ffem = fem * 0.97;
     return SizedBox(
         width: double.infinity,
-        child: Container(
+        child:  Container(
           // page3fLr (23:29)
           padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 64 * fem),
           width: double.infinity,
@@ -29,8 +26,21 @@ class _NextPage extends State<NextPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 200,
+              Positioned(
+                // shapePUa (23:26)
+                left: 0 * fem,
+                top: 0 * fem,
+                child: Align(
+                  child: SizedBox(
+                    width: 304 * fem,
+                    height: 259 * fem,
+                    child: Image.asset(
+                      'assets/page-1/images/shape.png',
+                      width: 304 * fem,
+                      height: 259 * fem,
+                    ),
+                  ),
+                ),
               ),
               Container(
                 // undrawfilesearchingre3evy1koY (23:48)
@@ -46,19 +56,20 @@ class _NextPage extends State<NextPage> {
               Container(
                 // signalGG6 (23:30)
                 margin:
-                    EdgeInsets.fromLTRB(155 * fem, 0 * fem, 180 * fem, 0 * fem),
+                EdgeInsets.fromLTRB(155 * fem, 0 * fem, 180 * fem, 0 * fem),
                 width: double.infinity,
                 height: 25 * fem,
               ),
               Container(
                 // scanandeditoWv (23:34)
                 margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1 * fem, 47 * fem),
+                EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1 * fem, 47 * fem),
                 child: Text(
                   'Scan and Edit',
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Inter',
+                    decoration: TextDecoration.none,
                     fontSize: 18 * ffem,
                     fontWeight: FontWeight.w600,
                     height: 1.2125 * ffem / fem,
@@ -69,7 +80,7 @@ class _NextPage extends State<NextPage> {
               Container(
                 // easilyscananydocumentstopdfort (23:35)
                 margin:
-                    EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 76 * fem),
+                EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 76 * fem),
                 constraints: BoxConstraints(
                   maxWidth: 259 * fem,
                 ),
@@ -78,6 +89,7 @@ class _NextPage extends State<NextPage> {
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Inter',
+                    decoration: TextDecoration.none,
                     fontSize: 15 * ffem,
                     fontWeight: FontWeight.w300,
                     height: 1.2125 * ffem / fem,
@@ -88,9 +100,9 @@ class _NextPage extends State<NextPage> {
               Container(
                 // buttonbBt (23:36)
                 margin:
-                    EdgeInsets.fromLTRB(115 * fem, 0 * fem, 115 * fem, 0 * fem),
+                EdgeInsets.fromLTRB(115 * fem, 0 * fem, 115 * fem, 0 * fem),
                 width: double.infinity,
-                height: 42 * fem,
+                height: 34 * fem,
                 decoration: const BoxDecoration(
                   color: Color(0xff66cfde),
                 ),
@@ -103,7 +115,7 @@ class _NextPage extends State<NextPage> {
                       );
                     },
                     style:
-                        TextButton.styleFrom(fixedSize: const Size(400, 100)),
+                    TextButton.styleFrom(fixedSize: const Size(400, 100)),
                     child: const Text('NEXT'),
                   ),
                 ),

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/page-5.dart';
 import 'package:myapp/utils.dart';
 
@@ -24,13 +21,26 @@ class FinalPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 200,
+            Positioned(
+              // shapePUa (23:26)
+              left: 0 * fem,
+              top: 0 * fem,
+              child: Align(
+                child: SizedBox(
+                  width: 304 * fem,
+                  height: 259 * fem,
+                  child: Image.asset(
+                    'assets/page-1/images/shape.png',
+                    width: 304 * fem,
+                    height: 259 * fem,
+                  ),
+                ),
+              ),
             ),
             Container(
               // undrawsharingarticlesrejnkp1yL (24:68)
               margin:
-                  EdgeInsets.fromLTRB(6.65 * fem, 0 * fem, 0 * fem, 62 * fem),
+              EdgeInsets.fromLTRB(6.65 * fem, 0 * fem, 0 * fem, 62 * fem),
               width: 258.65 * fem,
               height: 170 * fem,
               child: Image.asset(
@@ -41,7 +51,7 @@ class FinalPage extends StatelessWidget {
             Container(
               // signaltT8 (23:50)
               margin:
-                  EdgeInsets.fromLTRB(155 * fem, 0 * fem, 180 * fem, 0 * fem),
+              EdgeInsets.fromLTRB(155 * fem, 0 * fem, 180 * fem, 0 * fem),
               width: double.infinity,
               height: 25 * fem,
             ),
@@ -56,6 +66,7 @@ class FinalPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont(
                   'Inter',
+                  decoration: TextDecoration.none,
                   fontSize: 18 * ffem,
                   fontWeight: FontWeight.w600,
                   height: 1.2125 * ffem / fem,
@@ -65,7 +76,7 @@ class FinalPage extends StatelessWidget {
             ),
             Container(
               // convertpicturetotextimmediatel (23:54)
-              margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 76 * fem),
+              margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 60 * fem),
               constraints: BoxConstraints(
                 maxWidth: 248 * fem,
               ),
@@ -74,6 +85,7 @@ class FinalPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont(
                   'Inter',
+                  decoration: TextDecoration.none,
                   fontSize: 15 * ffem,
                   fontWeight: FontWeight.w300,
                   height: 1.2125 * ffem / fem,
@@ -84,9 +96,9 @@ class FinalPage extends StatelessWidget {
             Container(
               // buttonCcE (23:55)
               margin:
-                  EdgeInsets.fromLTRB(115 * fem, 0 * fem, 115 * fem, 0 * fem),
+              EdgeInsets.fromLTRB(115 * fem, 0 * fem, 115 * fem, 0 * fem),
               width: double.infinity,
-              height: 42 * fem,
+              height: 34 * fem,
               decoration: const BoxDecoration(
                 color: Color(0xff66cfde),
               ),
@@ -98,21 +110,11 @@ class FinalPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
-                  style:
-                  TextButton.styleFrom(fixedSize: const Size(400, 100)),
-                  child: Text(
-                  'NEXT',
-                  textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Inter',
-                    fontSize: 18 * ffem,
-                    fontWeight: FontWeight.w600,
-                    height: 1.2125 * ffem / fem,
-                    color: const Color(0xffffffff),
+                  style: TextButton.styleFrom(fixedSize: const Size(400, 100)),
+                  child: const Text(
+                    'NEXT',
                   ),
                 ),
-                ),
-
               ),
             ),
           ],

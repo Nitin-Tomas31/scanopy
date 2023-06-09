@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:myapp/camera/displayscreen.dart';
 
 class CameraPreviewWidget extends StatefulWidget {
   const CameraPreviewWidget({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
 
   Future<void> _initializeController() async {
     final cameras = await availableCameras();
-    _controller = CameraController(cameras[0], ResolutionPreset.medium);
+    _controller = CameraController(cameras[0], ResolutionPreset.high);
     _initializeControllerFuture = _controller.initialize();
     setState(() {});
   }
@@ -43,7 +44,12 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
   void takePicture() async {
     try {
       final picture = await _controller.takePicture();
-      // Do something with the picture, e.g. display it on a new screen.
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DisplayPictureScreen(imagePath: picture.path),
+        ),
+      );
     } on CameraException catch (e) {
       print('Error: $e.code\nError Message: $e.message');
     }
@@ -74,8 +80,17 @@ class _CameraPreviewWidgetState extends State<CameraPreviewWidget> {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 16.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0x00000000), // Transparent color
+                      ),
+                    ),
                     onPressed: takePicture,
-                    child: Image.asset('assets/page-1/images/circle-png-25313.png',height: 90,width: 90,),
+                    child: Image.asset(
+                      'assets/page-1/images/circle-png-25313.png',
+                      height: 70,
+                      width: 70,
+                    ),
                   ),
                 ),
               ),

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/page-3.dart';
 import 'package:myapp/utils.dart';
 
@@ -70,7 +67,7 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             Positioned(
               // saygoodbyetopaperdocumentsutA (23:20)
-              left: 36 * fem,
+              left: 55 * fem,
               top: 523 * fem,
               child: Align(
                 child: SizedBox(
@@ -80,6 +77,7 @@ class _HomeScreen extends State<HomeScreen> {
                     'Say goodbye to paper documents',
                     style: SafeGoogleFont(
                       'Inter',
+                      decoration: TextDecoration.none,
                       fontSize: 18 * ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2125 * ffem / fem,
@@ -102,6 +100,7 @@ class _HomeScreen extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Inter',
+                      decoration: TextDecoration.none,
                       fontSize: 15 * ffem,
                       fontWeight: FontWeight.w300,
                       height: 1.2125 * ffem / fem,
@@ -114,10 +113,10 @@ class _HomeScreen extends State<HomeScreen> {
             Positioned(
               // buttonzYE (23:28)
               left: 115 * fem,
-              top: 694 * fem,
+              top: 667 * fem,
               child: Container(
                 width: 130 * fem,
-                height: 42 * fem,
+                height: 34 * fem,
                 decoration: const BoxDecoration(
                   color: Color(0xff66cfde),
                 ),
@@ -131,7 +130,7 @@ class _HomeScreen extends State<HomeScreen> {
                       );
                     },
                     style:
-                        TextButton.styleFrom(fixedSize: const Size(400, 100)),
+                    TextButton.styleFrom(fixedSize: const Size(400, 100)),
                     child: const Text('NEXT'),
                   ),
                 ),

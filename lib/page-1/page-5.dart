@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/camera/camerautils.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/camera/startcamera.dart';
+import 'package:myapp/camera/image_picker.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +26,8 @@ class HomePage extends StatelessWidget {
             Container(
               // autogroupmz8zd2v (BmLLptrG3FzBCwZcW5MZ8z)
               margin:
-              EdgeInsets.fromLTRB(0 * fem, 50 * fem, 259 * fem, 295 * fem),
-              width: 82 * fem,
+              EdgeInsets.fromLTRB(0 * fem, 50 * fem, 100 * fem, 295 * fem),
+              width: 300 * fem,
               height: 25 * fem,
               child: Stack(
                 children: [
@@ -46,30 +41,15 @@ class HomePage extends StatelessWidget {
                         width: 100 * fem,
                         height: 100 * fem,
                         child: Text(
-                          'Home',
+                          'SCANOPY',
                           style: SafeGoogleFont(
-                            'Inter',
+                            'Montserrat',
+                            decoration: TextDecoration.none,
                             fontSize: 20 * ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.2125 * ffem / fem,
                             color: const Color(0xff000000),
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // vectordx2 (26:86)
-                    left: 0 * fem,
-                    top: 0 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 25 * fem,
-                        height: 19.44 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/vector-ZcS.png',
-                          width: 25 * fem,
-                          height: 19.44 * fem,
                         ),
                       ),
                     ),
@@ -85,6 +65,7 @@ class HomePage extends StatelessWidget {
                 'You dont have any files',
                 style: SafeGoogleFont(
                   'Inter',
+                  decoration: TextDecoration.none,
                   fontSize: 13 * ffem,
                   fontWeight: FontWeight.w300,
                   height: 1.2125 * ffem / fem,
@@ -133,6 +114,7 @@ class HomePage extends StatelessWidget {
                           'My Files',
                           style: SafeGoogleFont(
                             'Inter',
+                            decoration: TextDecoration.none,
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2125 * ffem / fem,
@@ -154,6 +136,7 @@ class HomePage extends StatelessWidget {
                           'Settings',
                           style: SafeGoogleFont(
                             'Inter',
+                            decoration: TextDecoration.none,
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2125 * ffem / fem,
@@ -182,41 +165,67 @@ class HomePage extends StatelessWidget {
                   ),
                   Positioned(
                     // vectorAsQ (26:88)
-                    left: 47 * fem,
-                    top: 51 * fem,
+                    left: 35 * fem,
+                    top: 45 * fem,
                     child: Align(
                       child: SizedBox(
-                        width: 20 * fem,
-                        height: 22.76 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/vector-EWr.png',
-                          width: 20 * fem,
-                          height: 22.76 * fem,
-                        ),
-                      ),
+                          width: 50 * fem,
+                          height: 30.88 * fem,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                const Color.fromARGB(124, 102, 207, 222),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImagePickerPage(),
+                                ),
+                              );
+                            },
+                            child: Align(
+                              child: SizedBox(
+                                width: 20 * fem,
+                                height: 40.88 * fem,
+                                child: Image.asset(
+                                  'assets/page-1/images/vector-EWr.png',
+                                  width: 12 * fem,
+                                  height: 45.88 * fem,
+                                ),
+                              ),
+                            ),
+                          )),
                     ),
                   ),
                   Positioned(
                     // vectort2i (26:90)
-                    left: 155 * fem,
-                    top: 15 * fem,
+                    left: 140 * fem,
+                    top: 11 * fem,
                     child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color.fromARGB(0, 3, 172, 224),
+                        ),
+                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                          const CircleBorder(),
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const CameraPreviewWidget()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                              const CameraPreviewWidget()),
                         );
                       },
-                    child: Align(
-                      child: SizedBox(
-                        width: 41 * fem,
-                        height: 35.88 * fem,
+                      child: Align(
                         child: Image.asset(
                           'assets/page-1/images/vector-82i.png',
                           width: 41 * fem,
                           height: 35.88 * fem,
                         ),
-                      ),
                       ),
                     ),
                   ),

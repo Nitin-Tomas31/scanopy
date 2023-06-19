@@ -12,7 +12,7 @@ class OCRService {
     for (TextBlock block in recognisedText.blocks) {
       for (TextLine line in block.lines) {
         for (TextElement element in line.elements) {
-          result += element.text + " ";
+          result += "${element.text} ";
         }
         result += "\n";
       }

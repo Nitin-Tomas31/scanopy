@@ -75,3 +75,10 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
     );
   }
 }
+class ImagePickerHelper {
+  static Future<String?> pickImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    return pickedFile!.path;
+  }
+}
